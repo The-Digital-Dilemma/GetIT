@@ -13,7 +13,7 @@ To clone the repository to your local environment, follow these steps:
 - 3. Run the following command to clone the repository:
 
 ```
-git clone https://github.com/redblindbananaz/GetIT.git
+git clone https://github.com/The-Digital-Dilemma/GetIT.git
 ```
 
 - 4. Press Enter to create your local clone
