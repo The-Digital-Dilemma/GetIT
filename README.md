@@ -1,10 +1,10 @@
-#LMS System for Learning Programming Languages
+# LMS System for Learning Programming Languages
 
 Welcome to the Learning Management System (LMS) project for learning programming languages. This repository contains the source code and project files for the LMS system. Follow the instructions below to get started with setting up the project on your local environment and collaborating with the team.
 
 Please visit [Markdown](#https://code.visualstudio.com/Docs/languages/markdown) for more information on Markdown
 
-##Cloning the Repository
+## Cloning the Repository
 
 To clone the repository to your local environment, follow these steps:
 
