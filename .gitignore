@@ -1,2 +1,6 @@
 # will ignore the virtualenv
 myenv/
+.venv
+
+.DS_Store
+__pycache__/
