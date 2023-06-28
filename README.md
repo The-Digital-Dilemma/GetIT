@@ -76,7 +76,38 @@ The project will be accessible at http://localhost:8000 in your web browser.
 
 ## Collaboration:
 
-Strategy need to be established with the group for Branching, commiting changes and pushing changes.
+### Project Structure:
+
+```
+- GetIT (main app)
+- courses app
+- home app
+- users app
+- static folder
+- db.sqlite3
+- manage.py
+```
+In this structure, the project folder contains the following components:
+
+* GetIT (main app): The main app of the project.
+* courses app: An app dedicated to handling courses-related functionalities.
+* home app: An app responsible for the home page or landing page of the project.
+* users app: An app for managing user-related functionalities.
+* static folder: A folder that stores static files such as CSS, JavaScript, and images.
+* db.sqlite3: The SQLite database file used by the project.
+* manage.py: The entry point for Django's management commands.
+
+### Branching Methodology:
+
+For this small project, we can follow a simple branching methodology to organize our work effectively. Here are some steps to consider:
+
+* **1. Main Branch:** The main branch serves as the main development branch, where we merge completed features.
+* **2. Feature Branches:** Whenever you start working on a new feature or bug fix, create a new branch from main. Use a descriptive name for the branch that reflects the feature you are working on.
+* **3. Commits:** Make small, atomic commits while working on your feature. This allows for easier review and helps in isolating issues if they arise.
+* **4. Pull Requests:** Once you have completed your feature or bug fix, create a pull request to merge your branch into main. Assign the pull request to the lead team member for review.
+* **5. Review and Merge:** After the review process, make any necessary changes based on the feedback. Once the branch is approved, it can be merged into main.
+
+
 
 ## Usage:
 
@@ -85,6 +116,8 @@ Strategy need to be established with the group for Branching, commiting changes 
 ## License:
 
 ## Acknowledgments:
+
+This section will be accomplished at the end of the project.
 
 ## Troubleshooting:
 
