@@ -5,6 +5,7 @@ Welcome to the Learning Management System (LMS) project for learning programming
 
 Please visit [Markdown](#https://code.visualstudio.com/Docs/languages/markdown) for more information on Markdown
 ## Table of Contents:
+- [Intro](#intro)
 - [Installation](#installation)
     - [Cloning the Repository](#cloning-the-repository)
     - [Environment Setup](#setting-up-the-development-environment)
@@ -15,14 +16,12 @@ Please visit [Markdown](#https://code.visualstudio.com/Docs/languages/markdown) 
     - [Releases](#releases)
     - [Namind and Style convention](#naming-and-style-convention)
     - [CSS Styling](#css-styling)
-- [Usage](#usage)
-- [Contributing](#contributing)
+- [Learning Outcomes](#learning-outcomes)
+- [Project Requirements](#project-requirements)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 - [Contact](#contact)
-
 ## Installation:
-
 ### Cloning the Repository
 
 To clone the repository to your local environment, follow these steps:
@@ -175,15 +174,36 @@ body {
 }
 ```
 
+## Learning Outcomes:
 
+This assessment contributes to the following course learning outcomes:
 
+- **LO 1:** Integrate security and privacy principles throughout Software Development Life Circle (SDLC) to ensure web application security and system level integrity through application of current best IT industry practices
+- **LO 3:** Develop secure web applications using web frameworks and server-side scripting. 
+- **LO 4:** Apply core software development practices in web application development in organisational context.
+  
+## Project Requirements:
 
+- **Task 1:** Team setup, software development management and tools selection
+- **Task 2:** Requirement analysis, security and privacy policies set up
+- **Task 3:** Implementation:
+    - Set up the development environment
+    - Set up a collaboration repository on GitHub
+    - URLs design and implementation 
+    - Authentication implementation:
+        - Set up “signup” and “login” views
+        - Create an admin user
+        - Create users and user groups as per the project requirements
+    - Authorisation implementation:
+        - User and group permissions are set up as per the project requirements
+- **Task 4:** Reflective journal (individual task)
 
-## Usage:
-
-## Contributing:
 
 ## License:
+
+The "License" section specifies the terms and conditions under which the project is released.
+This project is currently license-free (2023)
+
 
 ## Acknowledgments:
 
