@@ -5,6 +5,9 @@ Welcome to the Learning Management System (LMS) project for learning programming
 
 Please visit [Markdown](#https://code.visualstudio.com/Docs/languages/markdown) for more information on Markdown
 ## Table of Contents:
+- [Installation](#installation)
+- [Collaboration](#collaboration)
+- [Usage](#usage)
 
 ## Installation:
 
