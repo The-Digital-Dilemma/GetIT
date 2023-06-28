@@ -4,6 +4,7 @@
 Welcome to the Learning Management System (LMS) project for learning programming languages. This repository contains the source code and project files for the LMS system. Follow the instructions below to get started with setting up the project on your local environment and collaborating with the team.
 
 Please visit [Markdown](#https://code.visualstudio.com/Docs/languages/markdown) for more information on Markdown
+## Table of Contents:
 
 ## Installation:
 
@@ -113,8 +114,8 @@ For this small project, we can follow a simple branching methodology to organize
 
 Once you make your desired changes on the file from your branch:
 
-**1. Commit the Changes:** Add the modified files to the staging area and commit the changes with a descriptive commit message. This captures the snapshot of your changes.
-**2. Push the Changes:** Push the committed changes to the repository on GitHub. This updates the remote repository with your latest changes.
+* **1. Commit the Changes:** Add the modified files to the staging area and commit the changes with a descriptive commit message. This captures the snapshot of your changes.
+* **2. Push the Changes:** Push the committed changes to the repository on GitHub. This updates the remote repository with your latest changes.
 
 Once all the necessary commits have been made to solve the issue or achieve the goal, the team can create a pull request. This step ensures that the changes are ready for review as a cohesive unit.
 * Before creating the pull request, ensure that all relevant commits addressing the specific issue or goal have been pushed to the branch associated with the pull request.
