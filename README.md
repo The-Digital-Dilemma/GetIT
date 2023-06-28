@@ -6,8 +6,20 @@ Welcome to the Learning Management System (LMS) project for learning programming
 Please visit [Markdown](#https://code.visualstudio.com/Docs/languages/markdown) for more information on Markdown
 ## Table of Contents:
 - [Installation](#installation)
+    - [Cloning the Repository](#cloning-the-repository)
+    - [Environment Setup](#setting-up-the-development-environment)
 - [Collaboration](#collaboration)
+    - [Project Structure](#project-structure)
+    - [Branching Methodology](#brandching-methodology)
+    - [Pull Request](#pull-request)
+    - [Releases](#releases)
+    - [Namind and Style convention](#naming-and-style-convention)
+    - [CSS Styling](#css-styling)
 - [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+- [Contact](#contact)
 
 ## Installation:
 
@@ -130,6 +142,17 @@ Once all the necessary commits have been made to solve the issue or achieve the 
 
 [About pull requests - Github](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
 
+### Releases:
+
+### Naming and Style Convention:
+
+Consistent naming and styling conventions enhance code readability and maintainability. Although there are no strict rules, adopting widely accepted conventions promotes collaboration and reduces confusion. Consider the following guidelines:
+
+- **Python:** Follow the [PEP 8 guidelines](https://pep8.org) for Python code, including naming conventions for variables, functions, classes, and modules. Use descriptive names and avoid abbreviations when possible.
+- **Django:** Adhere to Django's coding style guidelines, including naming conventions for models, views, templates, URLs, and other components. Use lowercase letters and underscores for most names (e.g., my_model, my_template.html).
+- **HTML/CSS:** Use descriptive and meaningful class and ID names in HTML and CSS. Consider using a naming convention like BEM (Block, Element, Modifier) to keep your styles organized and modular.[Block, Element, Modifier](https://css-tricks.com/bem-101/)
+- **JavaScript:** Follow established JavaScript coding conventions like [the Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html). Use camelCase for variable and function names.
+
 ### CSS Styling:
 
 To maintain consistent styling across our project, it's a good practice to define a root CSS file that contains common styles and colors. This file can be imported in other CSS files for easy access.
@@ -155,6 +178,7 @@ body {
 
 
 
+
 ## Usage:
 
 ## Contributing:
@@ -165,9 +189,6 @@ body {
 
 This section will be accomplished at the end of the project.
 
-## Troubleshooting:
+## Contact:
 
-## FAQ:
-
-## Changelog:
 
