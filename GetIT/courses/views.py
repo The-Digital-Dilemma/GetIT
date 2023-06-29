@@ -7,10 +7,10 @@ from .models import Course
 class CoursesListView(ListView):
     model = Course
     template_name = "courses/courses-list.html"
-    context_object_name = "courses-list"
+    context_object_name = "courses"
     
 class CourseDetailView(DetailView):
     model = Course
     template_name = "courses/course-details.html"
-    context_object_name = "course-details"
+    context_object_name = "course"
     

@@ -5,5 +5,8 @@
 {% for course in courses %}
 <div class="courses-card">
   <h1>{{ course.title }}</h1>
+  <a class="btn-courses-card" href="{% url 'course-details' course.pk %}"
+    >View Details</a
+  >
 </div>
 {% endfor %} {% endblock %}
