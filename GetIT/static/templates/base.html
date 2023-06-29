@@ -2,20 +2,29 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GeT-IT | Learn programming languages fast!</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
     <header>
-        <h1>GeT-IT</h1>
-        <h2>Learn programming languages fast!</h2>
-        <p>*** This line and above comes from the base.html template in the 'static/templates/' folder. ***</p>
+      <h1>GeT-IT</h1>
+      <h2>Learn programming languages fast!</h2>
+      <p>
+        *** This line and above comes from the base.html template in the
+        'static/templates/' folder. ***
+      </p>
     </header>
-    {% block content %}
-    {% endblock %}
-    
-</body>
+    {% include 'navigation.html' %}
+    <main>{% block content %} {% endblock %}</main>
+    <footer>
+      <p>
+        *** This line and below comes from the base.html template in the
+        'static/templates/' folder. ***
+      </p>
+      <p>&copy; 2020 GeT-IT</p>
+    </footer>
+  </body>
 </html>
