@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block content %}
+<h1>Courses:</h1>
+<p>This is the main course page</p>
+<!-- Not working yet below -->
+<div class="courses-card-container">
+  {% for course in courses %}
+  <div class="courses-card-details">
+    <h1>{{ course.title }}</h1>
+    <div class="courses-card-logo">logo here</div>
+    <div class="course-card-description">{{ course.description }}</div>
+    <a class="btn-courses-card" href="{% url 'course_details' course.pk %}"
+      >View Details</a
+    >
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

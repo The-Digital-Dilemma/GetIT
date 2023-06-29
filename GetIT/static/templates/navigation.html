@@ -1,0 +1,27 @@
+<nav class="navigation-container">
+  <ul class="navigation-list">
+    <!-- Assign the value of request.resolver_match.url_name to the variable url_name -->
+    {% with url_name=request.resolver_match.url_name %}
+    <!-- The 'url_name' variable is passed from the view to the template. if it corresponf to link than class name changes to active (can create a viisualisation of it)-->
+    <li
+      class="{% if url_name == 'home' %}active{% else %}navigation-link{% endif %}"
+    >
+      <a class="link-home" href="/">GeT-IT</a>
+    </li>
+    <li
+      class="{% if url_name == 'courses' or url_name == '' %}active{% else %}navigation-link{% endif %}"
+    >
+      <a class="link" href="/courses">Courses</a>
+    </li>
+    <li
+      class="{% if url_name == 'profile' %}active{% else %}navigation-link{% endif %}"
+    >
+      <a class="link" href="/">Profile</a>
+    </li>
+    <!-- Different class for login as might have different styling-->
+    <li class="login">
+      <a class="link-login" href="/">Login/Register</a>
+    </li>
+  </ul>
+  {% endwith %}
+</nav>
