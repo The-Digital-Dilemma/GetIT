@@ -1,0 +1,5 @@
+{% extends "base.html" %} {% block content %} {% for course in courses %}
+<div class="courses-card">
+  <h1>{{ course.title }}</h1>
+</div>
+{% endfor %} {% endblock %}
