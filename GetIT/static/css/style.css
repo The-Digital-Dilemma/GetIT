@@ -116,6 +116,8 @@ footer {
 /*  FOOTER - NAVIGATION SECTION */
 
 /*  COURSES-LIST SECTION */
+
+/* Red border is for testing purposes */
 .courses-card-container {
   flex: 1;
   display: flex;
@@ -127,5 +129,31 @@ footer {
   flex-direction: column;
   border: 1px solid red;
   justify-content: center;
+  align-items: center;
   padding: 1em;
+  margin: 1em;
+}
+.courses-card-logo {
+  width: 160px;
+  height: 160px;
+  border: 1px solid red;
+}
+.course-card-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  margin: 1em;
+  border: 1px solid red;
+}
+.btn-courses-card {
+  padding: 0.5em 1em;
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--border-radius);
+  background-color: var(--background-color-dark);
+  color: var(--secondary-color);
+  text-decoration: none;
+  letter-spacing: 1.2px;
+  vertical-align: center;
 }
