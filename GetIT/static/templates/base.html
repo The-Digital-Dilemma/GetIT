@@ -9,15 +9,8 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
   <body>
-    <header>
-      <h1>GeT-IT</h1>
-      <h2>Learn programming languages fast!</h2>
-      <p>
-        *** This line and above comes from the base.html template in the
-        'static/templates/' folder. ***
-      </p>
-    </header>
-    {% include 'navigation.html' %}
+    <header>{% include 'navigation.html' %}</header>
+
     <main>{% block content %} {% endblock %}</main>
     <footer>
       <p>
