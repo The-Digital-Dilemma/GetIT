@@ -1,23 +1,97 @@
+:root {
+  --primary-color: #abff2e;
+  --secondary-color: #f4f4f4;
+  --background-color: #231b26;
+  --background-color-dark: rgb(25, 5, 30);
+  --border-color: #ccc;
+  --border-color-light: #f4f4f4;
+  --border-color-dark: #666;
+  --border-radius: 1em;
+  --box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  --box-shadow-light: 0 1px 5px rgba(0, 0, 0, 0.1);
+  --box-shadow-dark: 0 1px 5px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease-in-out;
+}
+/*  BODY  SECTION */
+
 html,
 body {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
+  color: var(--secondary-color);
+  background-color: var(--background-color);
 }
+
+/*  HEADER SECTION */
 
 header {
-  background-color: #333;
+  background-color: var(--background-color-dark);
+  border-bottom: 0.1em solid var(--primary-color);
 }
 
-header h1,
-header h2,
-header p {
-  color: greenyellow;
-  text-align: center;
-  margin-top: 0;
+/*  HEADER - NAVIGATION SECTION */
+
+ul {
+  list-style-type: none;
+  padding: 1em;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+}
+li {
+  display: flex;
+  align-items: center;
+  padding: 0.7em;
+  position: relative;
+  border: 1px solid red;
+}
+.login {
+  display: flex;
+  flex-direction: column;
+}
+.link,
+.link-login,
+.link-home {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1.2px;
+  vertical-align: center;
+  padding: 0em 1em;
+}
+.link-home {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+.link-login,
+.link {
+  padding: 0.5em 1em;
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--border-radius);
+}
+.link:hover,
+.link-login:hover {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  transition: var(--transition);
 }
 
-.content h2 {
-  color: blueviolet;
+/*  MAIN SECTION */
+
+main {
+  flex: 1;
+  padding: 1em;
+}
+
+/*  FOOTER SECTION */
+
+footer {
+  padding: 1em;
+  margin-top: auto;
+  background-color: var(--background-color-dark);
+  border-top: 0.1em solid var(--primary-color);
 }
