@@ -6,6 +6,8 @@
   {% for course in courses %}
   <div class="courses-card-details">
     <h1>{{ course.title }}</h1>
+    <div class="courses-card-logo">logo here</div>
+    <div class="course-card-description">{{ course.description }}</div>
     <a class="btn-courses-card" href="{% url 'course-details' course.pk %}"
       >View Details</a
     >
