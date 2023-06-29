@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% block content %}
+<h1>Courses:</h1>
+<p>This is the main course page</p>
+<!-- Not working yet below -->
+{% for course in courses %}
+<div class="courses-card">
+  <h1>{{ course.title }}</h1>
+</div>
+{% endfor %} {% endblock %}
