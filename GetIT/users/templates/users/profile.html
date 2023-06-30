@@ -1,12 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 <h1>Profile</h1>
-{% if user.profile.profile_pic %}
-<img src="{{ user.profile.profile_pic.url }}" alt="Profile Picture" />
+
+{% if user.profile.profile_pics %}
+<!-- Still need to test the laoding picture first to see if it shows-->
+<img src="{{ user.profile.profile_pics.url }}" alt="Profile Picture" />
 {% else %}
-<img
-  src="{{ user.profile.profile_pic.field.default }}"
-  alt="Default Profile Picture"
-/>
+<img src="/media/profile_pics/default.jpg" alt="Default Profile Picture" />
 {% endif %}
 
 <!-- Display other user information here -->
@@ -14,6 +13,7 @@
 <p>Username: {{ user.username }}</p>
 <p>Email: {{ user.email }}</p>
 <p>First Name: {{ user.first_name }}</p>
+<a class="btn-profile-card" href="#">Change picture</a>
 {% else %}
 <!-- Does not work at the moment, need to work on that -->
 <p>You need to be logged in to view your profile</p>
