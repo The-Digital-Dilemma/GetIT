@@ -23,7 +23,7 @@
       alt="Default Profile Picture"
     />
     {% endif %}
-    <p>{{ user.username }}</p>
+    <p>{{ user.username|capfirst }}</p>
     <a
       class="btn-profile-card"
       href="{% url 'users:profile_update' %}"
@@ -37,11 +37,12 @@
       <span> {% if user.email %}{{ user.email }}{% else %}Unknown{% endif %} </span>
       <p>First Name:</p>
       <span>
-        {% if user.first_name %}{{ user.first_name }} {% else %}Unknown{% endif %}
+        <!-- If user don't have first name then it will be unknown and first name will be capitalised by default-->
+        {% if user.first_name %}{{ user.first_name|capfirst}} {% else %}Unknown{% endif %}
       </span>
       <p>Last Name:</p>
       <span>
-        {% if user.last_name %}{{ user.last_name }}{% else %}Unknown{% endif %}
+        {% if user.last_name %}{{ user.last_name|capfirst }}{% else %}Unknown{% endif %}
       </span>
     </div>
   </div>
