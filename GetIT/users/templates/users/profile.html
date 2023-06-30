@@ -4,13 +4,15 @@
   <div class="profile-left">
     <h1>Picture</h1>
     {% if user.is_authenticated %} {% if user.profile.profile_pics %}
-    <!-- Still need to test the laoding picture first to see if it shows-->
+    <!-- IF the user is authenticated and the user has a profile picture then it will show:-->
     <img src="{{ user.profile.profile_pics.url }}" alt="Profile Picture" />
     {% else %}
     <img src="/media/profile_pics/default.jpg" alt="Default Profile Picture" />
     {% endif %}
     <p>{{ user.username }}</p>
-    <a class="btn-profile-card" href="#">Change picture</a>
+    <a class="btn-profile-card" href="{% url 'users:profile_update' %}"
+      >Change picture</a
+    >
   </div>
   <div class="profile-right">
     <h1>Details</h1>
