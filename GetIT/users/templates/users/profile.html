@@ -1,16 +1,32 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
 
+<!--  and this is my beginning block-->
+{% block content %}
+
+<!-- This is the profile page for the user, it will show the profile picture, username, email, first name and last name if authenticated-->
+{% if user.is_authenticated %}
 <div class="profile-container">
   <div class="profile-left">
     <h1>Picture:</h1>
-    {% if user.is_authenticated %} {% if user.profile.profile_pics %}
-    <!-- IF the user is authenticated and the user has a profile picture then it will show:-->
-    <img src="{{ user.profile.profile_pics.url }}" alt="Profile Picture" />
+
+    <!-- IF the user has a profile picture then it will show:-->
+    {% if user.profile.profile_pics %}
+    <img
+      src="{{ user.profile.profile_pics.url }}"
+      alt="Profile Picture"
+    />
+
+    <!-- ELSE it will show the default picture:-->
     {% else %}
-    <img src="/media/profile_pics/default.jpg" alt="Default Profile Picture" />
+    <img
+      src="/media/profile_pics/default.jpg"
+      alt="Default Profile Picture"
+    />
     {% endif %}
     <p>{{ user.username }}</p>
-    <a class="btn-profile-card" href="{% url 'users:profile_update' %}"
+    <a
+      class="btn-profile-card"
+      href="{% url 'users:profile_update' %}"
       >Change picture</a
     >
   </div>
@@ -18,17 +34,18 @@
     <h1>Details:</h1>
     <div class="profile-right-inside">
       <p>Email:</p>
-      <span>{{ user.email }}</span>
+      <span> {% if user.email %}{{ user.email }}{% else %}Unknown{% endif %} </span>
       <p>First Name:</p>
-      <span>{{ user.first_name }}</span>
+      <span>
+        {% if user.first_name %}{{ user.first_name }} {% else %}Unknown{% endif %}
+      </span>
       <p>Last Name:</p>
-      <span>{{ user.last_name }}</span>
-
-      {% else %}
-      <!-- Does not work at the moment, need to work on that -->
-      <p>You need to be logged in to view your profile</p>
-      {% endif %}
+      <span>
+        {% if user.last_name %}{{ user.last_name }}{% else %}Unknown{% endif %}
+      </span>
     </div>
   </div>
 </div>
-{% endblock %}
+{% else %} {% block content2 %}
+<p>Please login in order to view profile</p>
+{% endblock %} {% endif %} {% endblock %}
