@@ -215,3 +215,44 @@ footer {
 .profile-right-inside p {
   text-decoration: underline;
 }
+
+/*  PROFILE PAGE SECTION */
+
+/* Red border is for testing purposes */
+
+.update-profile-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid red;
+  padding: 0.3em;
+}
+.update-profile-form a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 1.2em;
+}
+
+label {
+  padding: 0.3em;
+  font-size: 1.7em;
+  letter-spacing: 1.2px;
+}
+#id_profile_pics,
+.btn-profile-update {
+  padding: 0.5em 1em;
+  margin: 2em;
+  font-size: 1.5em;
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--border-radius);
+  background-color: var(--background-color-dark);
+  color: var(--secondary-color);
+  text-decoration: none;
+  letter-spacing: 1.2px;
+  vertical-align: center;
+}
+#text {
+  font-size: 2em;
+}
