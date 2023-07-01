@@ -57,6 +57,7 @@ li {
 
 .link,
 .link-login,
+.link-logout,
 .link-home {
   color: white;
   text-decoration: none;
@@ -71,13 +72,15 @@ li {
   padding: 0;
 }
 .link-login,
+.link-logout,
 .link {
   padding: 0.5em 1em;
   border: 1px solid var(--border-color-light);
   border-radius: var(--border-radius);
 }
 .link:hover,
-.link-login:hover {
+.link-login:hover,
+.link-logout:hover {
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
   transition: var(--transition);
@@ -237,7 +240,7 @@ footer {
 
 label {
   padding: 0.3em;
-  font-size: 1.7em;
+  font-size: 1em;
   letter-spacing: 1.2px;
 }
 #id_profile_pics,
@@ -255,4 +258,33 @@ label {
 }
 #text {
   font-size: 2em;
+}
+
+/*  LOGIN & REGISTER PAGE SECTION */
+
+/* Red border is for testing purposes */
+
+.btn-login,
+.btn-register {
+  padding: 0.5em 1em;
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--border-radius);
+  background-color: var(--background-color-dark);
+  color: var(--secondary-color);
+  letter-spacing: 1.2px;
+  vertical-align: center;
+}
+.btn-login:hover,
+.btn-register:hover {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  transition: var(--transition);
+  box-shadow: var(--glow-effect);
+}
+.link-register,
+.link-login-again {
+  background-color: var(--background-color-dark);
+  color: var(--primary-color);
+  text-decoration: none;
+  letter-spacing: 1.2px;
 }
