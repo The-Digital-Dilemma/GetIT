@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+<!--  and this is my beginning block-->
+{% block content %}
+
+<!-- This is the profile page for the user, it will show the profile picture, username, email, first name and last name if authenticated-->
+{% if user.is_authenticated %}
+<div class="profile-container">
+  <div class="profile-left">
+    <h1>Picture:</h1>
+
+    <!-- IF the user has a profile picture then it will show:-->
+    {% if user.profile.profile_pics %}
+    <img
+      src="{{ user.profile.profile_pics.url }}"
+      alt="Profile Picture"
+    />
+
+    <!-- ELSE it will show the default picture:-->
+    {% else %}
+    <img
+      src="/media/profile_pics/default.jpg"
+      alt="Default Profile Picture"
+    />
+    {% endif %}
+    <p>{{ user.username|capfirst }}</p>
+    <a
+      class="btn-profile-card"
+      href="{% url 'users:profile_update' %}"
+      >Change picture</a
+    >
+  </div>
+  <div class="profile-right">
+    <h1>Details:</h1>
+    <div class="profile-right-inside">
+      <p>Email:</p>
+      <span> {% if user.email %}{{ user.email }}{% else %}Unknown{% endif %} </span>
+      <p>First Name:</p>
+      <span>
+        <!-- If user don't have first name then it will be unknown and first name will be capitalised by default-->
+        {% if user.first_name %}{{ user.first_name|capfirst}} {% else %}Unknown{% endif %}
+      </span>
+      <p>Last Name:</p>
+      <span>
+        {% if user.last_name %}{{ user.last_name|capfirst }}{% else %}Unknown{% endif %}
+      </span>
+    </div>
+  </div>
+</div>
+{% else %} {% block content2 %}
+<p>Please login in order to view profile</p>
+{% endblock %} {% endif %} {% endblock %}

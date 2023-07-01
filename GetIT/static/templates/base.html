@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,8 +11,8 @@
     <header>{% include 'navigation.html' %}</header>
     <!--Showing the welcome message for the user -->
     <section>
-      {% if username %}
-      <p>Hi, {{ username }}!</p>
+      {% if user.username %}
+      <p>Welcome back, {{ user.username }}!</p>
       {% else %}
       <p>Welcome to GetIT</p>
       {% endif %}
