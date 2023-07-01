@@ -61,7 +61,7 @@ class LogoutInterfaceView(LogoutView):
 class RegisterView(CreateView):
     form_class = CustomUserCreationForm
     template_name = 'users/register.html'
-    success_url = reverse_lazy('login')
+    success_url = reverse_lazy('users:login')
 
     def get(self, request, *args, **kwargs):
         if self.request.user.is_authenticated:
