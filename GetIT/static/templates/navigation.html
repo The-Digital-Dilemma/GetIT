@@ -20,7 +20,11 @@
     </li>
     <!-- Different class for login as might have different styling-->
     <li class="login">
-      <a class="link-login" href="/">Login/Register</a>
+      {% if user.is_authenticated %}
+      <a class="link-logout" href="{% url 'users:logout' %}">Logout</a>
+      {% else %}
+      <a class="link-login" href="{% url 'users:login' %}">Login/Register</a>
+      {% endif %}
     </li>
   </ul>
   {% endwith %}
