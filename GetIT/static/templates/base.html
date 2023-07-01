@@ -3,16 +3,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>GeT-IT | Learn programming languages fast!</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/style.css' %}"
+    />
   </head>
   <body>
     <header>{% include 'navigation.html' %}</header>
     <!--Showing the welcome message for the user -->
     <section>
       {% if user.username %}
-      <p>Welcome back, {{ user.username }}!</p>
+      <p>Welcome back, {{ user.username|capfirst }}!</p>
       {% else %}
       <p>Welcome to GetIT</p>
       {% endif %}
@@ -20,9 +26,7 @@
 
     <main>{% block content %} {% endblock %}</main>
     <footer>
-      <p>
-        This setion is the footer, need links as nav, contact and privacy policy
-      </p>
+      <p>This setion is the footer, need links as nav, contact and privacy policy</p>
       <p>&copy; 2020 GeT-IT</p>
     </footer>
   </body>

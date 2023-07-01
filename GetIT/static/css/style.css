@@ -55,6 +55,22 @@ li {
   border: 1px solid red;
 }
 
+li.active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -0.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background-color: var(--primary-color);
+}
+li.active a {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
 .link,
 .link-login,
 .link-logout,
@@ -86,6 +102,7 @@ li {
   transition: var(--transition);
   box-shadow: var(--glow-effect);
 }
+
 /*  Section SECTION */
 section {
   display: flex;
