@@ -1,5 +1,13 @@
 {% extends "base.html" %} {% block content %}
-<div class="course">
-  <h1>{{ course.title }}</h1>
-</div>
-{% endblock %}
+<h2>{{ course.title }}</h2>
+{% comment %}
+<p>{{ course.description }}</p>
+{% endcomment %} {% for chapter in course.chapter_set.all %}
+<h3>{{ chapter.chapter_number }}: {{ chapter.title }}</h3>
+{% for lesson in chapter.lesson_set.all %}
+<a
+  class="link-lesson-details"
+  href="{% url 'lesson_details' course.pk chapter.pk lesson.pk %}"
+  >{{ lesson.lesson_number }}. {{ lesson.title }}</a
+><br />
+{% endfor %} {% endfor %} {% endblock %}

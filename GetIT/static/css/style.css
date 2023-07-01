@@ -282,7 +282,9 @@ label {
   box-shadow: var(--glow-effect);
 }
 .link-register,
-.link-login-again {
+.link-login-again,
+.link-lesson-details,
+.link-back-to-course-details {
   background-color: var(--background-color-dark);
   color: var(--primary-color);
   text-decoration: none;
