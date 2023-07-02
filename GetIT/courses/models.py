@@ -15,13 +15,15 @@ class Course(models.Model):
         ('HTML/CSS', 'HTML/CSS'),
     ]
     language = models.CharField(max_length=20, choices=language)
+    logo = models.ImageField(
+        upload_to='images/course_logos', default='images/default_logo.png')
 
     def __str__(self):
         return self.title
-    
+
     def get_absolute_url(self):
         return reverse("course", kwargs={"pk": self.pk})
-    
+
 
 class Chapter(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
@@ -34,7 +36,7 @@ class Chapter(models.Model):
 
     def __str__(self):
         return self.title
-    
+
 
 class Lesson(models.Model):
     chapter = models.ForeignKey(Chapter, on_delete=models.CASCADE)
@@ -48,4 +50,3 @@ class Lesson(models.Model):
 
     def __str__(self):
         return self.title
-    

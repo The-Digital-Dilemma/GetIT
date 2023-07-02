@@ -1,13 +1,55 @@
-{% extends "base.html" %}
-{% block content %}
-<div class="content">
-    <p>*** This line and below extends the base.html template and comes from the welcome.html template in the 'home/templates/home' folder. ***</p>
-    <h2>Welcome to Get-IT</h2>
-    <p>Today is {{today}}</p>
-    <br />
-    <p>We will soon be the best place to learn programming online.</p>
-    <p>Come back and see us soon!</p>
-    <p>Best regards,</p>
-    <p>The GeT-IT team</p>
+{% extends "base.html" %} {% block content %}
+<div class="welcome-container">
+  <div class="welcome-hero">
+    <h1>Welcome to Get-IT</h1>
+    <p>"Expand Your Horizons, Discover Your Path."</p>
+    <img
+      src="static/images/Rectangle.png"
+      alt="welcome image"
+    />
+  </div>
+  <div class="welcome-content">
+    <div class="welcome-content-solution">
+      <h1>Our solution</h1>
+      <p>
+        For students and programming enthusiasts who are seeking a comprehensive and
+        interactive learning platform, Get IT is a fantastic solution that offers a wide
+        range of programming language courses. Unlike traditional learning resources or
+        scattered online tutorials, Get IT provides a centralized platform dedicated to
+        teaching programming languages effectively.
+      </p>
+      <p>
+        Our solution ensures that learners have a comprehensive understanding of
+        programming languages, empowering them to acquire valuable skills for their
+        academic and professional growth.
+      </p>
+      <p>
+        Unlike alternative online resources or fragmented tutorials, Get IT offers a
+        cohesive and structured learning environment. It surpasses the limitations of
+        individual tutorials or outdated textbooks by providing a comprehensive curriculum
+        and updated learning materials.
+      </p>
+      <p>
+        By leveraging the benefits of Get IT, users can overcome the challenges of finding
+        reliable programming language lessons and improve their learning outcomes. With
+        our solution, learners gain the advantage of a comprehensive, updated, and user-
+        friendly platform, setting them on a path to success in the programming world.
+      </p>
+    </div>
+    <div class="welcome-content-who">
+        <h1>Who is it for?</h1>
+        <p>
+            Get IT is a fantastic solution for students and programming enthusiasts who are
+            seeking a comprehensive and interactive learning platform. It is ideal for
+            individuals who are interested in learning programming languages and acquiring
+            valuable skills for their academic and professional growth.
+        </p>
+        <p>If you are:</p>
+        <p> Students and learners seeking to acquire programming skills.
+        </br>Professionals looking to enhance their programming knowledge.
+        </br>Educators and instructors who require a reliable platform to deliver programming lessons.
+        </br>Employers and organizations in need of a skilled workforce.</p>
+    </div>
+  </div>
+  {% endblock %}
 </div>
-{% endblock %}

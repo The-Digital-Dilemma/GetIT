@@ -1,5 +1,11 @@
 {% extends 'base.html' %} {% block content %}
-<h2>Logged out</h2>
-<p>Thanks for spending some quality time with GeT-IT today.</p>
-<a class="link-login-again" href="{% url 'users:login' %}">Log in again</a>
+<div class="logout-container">
+  <h1>Logged out</h1>
+  <p>Thanks for spending some quality time with GeT-IT today.</p>
+  <a
+    class="link-login-again"
+    href="{% url 'users:login' %}"
+    >Log in again</a
+  >
+</div>
 {% endblock %}
