@@ -1,13 +1,21 @@
-{% extends "base.html" %}
-{% block content %}
-<div class="content">
-    <p>*** This line and below extends the base.html template and comes from the welcome.html template in the 'home/templates/home' folder. ***</p>
-    <h2>Welcome to Get-IT</h2>
-    <p>Today is {{today}}</p>
-    <br />
-    <p>We will soon be the best place to learn programming online.</p>
-    <p>Come back and see us soon!</p>
-    <p>Best regards,</p>
-    <p>The GeT-IT team</p>
+{% extends "base.html" %} {% block content %}
+<div class="welcome-container">
+  <div class="welcome-hero">
+    <h1>Welcome to Get-IT</h1>
+    <p>"Expand Your Horizons, Discover Your Path."</p>
+    <img
+      src="static/images/Rectangle.png"
+      alt="welcome image"
+    />
+  </div>
+  <div class="welcome-content">
+    <div class="welcome-content-solution">
+      <h1>Our solution</h1>
+      <p>
+        Get-IT is a platform that helps students to discover their career path and also
+        helps them to get the necessary resources to achieve their goals.
+      </p>
+    </div>
+  </div>
+  {% endblock %}
 </div>
-{% endblock %}
