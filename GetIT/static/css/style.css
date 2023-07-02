@@ -586,3 +586,28 @@ form .btn-register {
   font-size: 1.2em;
   margin: 2em 0;
 }
+
+/* COURSE DETAILS AND LESSON CONTENT SECTION */
+
+/* Red border is for testing purposes */
+.course-details-container {
+  display: flex;
+  justify-content: space-between;
+}
+.sidebar {
+  padding: 1em;
+  border-right: 1px solid var(--border-color);
+}
+.sidebar-lesson-links {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+.sidebar-lesson-links:hover {
+  color: var(--primary-color);
+  box-shadow: var(--glow-effect);
+  transition: var(--transition);
+}
+.lesson-content {
+  flex: 3;
+  padding: 1em;
+}
