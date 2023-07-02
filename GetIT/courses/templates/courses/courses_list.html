@@ -8,7 +8,12 @@
     <div class="courses-card-title">
       <h3>{{ course.title }}</h3>
     </div>
-    <div class="courses-card-logo"></div>
+    <div class="courses-card-logo">
+      <img
+        src="{{ course.logo.url }}"
+        alt="{{ course.title }}"
+      />
+    </div>
     <div class="course-card-description">{{ course.description }}</div>
     <a
       class="btn-courses-card"

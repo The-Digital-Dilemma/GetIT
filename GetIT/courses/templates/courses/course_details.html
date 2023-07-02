@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% block content %} {% if course.chapter_set.all %}
 <h2>{{ course.title }}</h2>
 {% comment %}
 <p>{{ course.description }}</p>
@@ -10,4 +10,12 @@
   href="{% url 'lesson_details' course.pk chapter.pk lesson.pk %}"
   >{{ lesson.lesson_number }}. {{ lesson.title }}</a
 ><br />
-{% endfor %} {% endfor %} {% endblock %}
+
+{% endfor %} {% endfor %} {% comment %} Otherwise it shows a message that the content is
+coming soon {% endcomment %} {% else %}
+<h2>{{ course.title }}</h2>
+<div class="coming-soon">
+  <p>content coming soon</p>
+</div>
+
+{% endif %} {% endblock %}
