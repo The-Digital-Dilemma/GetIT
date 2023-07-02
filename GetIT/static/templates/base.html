@@ -17,11 +17,13 @@
     <header>{% include 'navigation.html' %}</header>
     <!--Showing the welcome message for the user -->
     <section>
-      {% if user.username %}
-      <p>Welcome back, {{ user.username|capfirst }}!</p>
-      {% else %}
-      <p>Welcome to GetIT</p>
-      {% endif %}
+      <div class="section-right">
+        {% if user.username %}
+        <p>Welcome back, <span>{{ user.username|capfirst }}</span>!</p>
+        {% else %}
+        <p>Welcome to GetIT</p>
+        {% endif %}
+      </div>
     </section>
 
     <main>{% block content %} {% endblock %}</main>

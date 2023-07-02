@@ -59,7 +59,7 @@ li.active::after {
   content: "";
   display: block;
   position: absolute;
-  bottom: -0.5em;
+  bottom: 0.5em;
   left: 50%;
   transform: translateX(-50%);
   width: 100px;
@@ -109,14 +109,16 @@ li.active a {
 /*  Section SECTION */
 section {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  border-bottom: 1px solid var(--border-color-dark);
+  justify-content: space-between;
+  padding: 0 1.5em;
+  border-bottom: var(--border-color) 1px solid;
 }
-section p {
-  padding-right: 2em;
+
+.section-right span {
+  font-size: 1em;
+  color: var(--primary-color);
 }
+
 /*  MAIN SECTION */
 /* Red border is for testing purposes */
 main {
@@ -249,11 +251,12 @@ footer {
   justify-content: space-evenly;
   align-items: center;
   margin: 0.1em;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .profile-left,
-.profile-right {
+.profile-right,
+.update-profile-form {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -261,7 +264,24 @@ footer {
   align-items: center;
   margin: 1em;
   padding: 2em;
-  border: 1px solid red;
+  border: 1px solid var(--border-color-light);
+  background-color: var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+.profile-right h1,
+.profile-left h1,
+.update-profile-form h1 {
+  text-align: center;
+  justify-content: center;
+  vertical-align: center;
+  padding: 0.5em;
+  width: 30%;
+  background-color: var(--secondary-color);
+  color: var(--background-color-dark);
+  border: 3px solid var(--background-color-dark);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-light);
 }
 
 .profile-left img {
@@ -270,13 +290,22 @@ footer {
   border-radius: 50%;
   object-fit: cover;
   align-self: center;
+  border: 3px solid var(--primary-color);
+  box-shadow: var(--box-shadow-light);
 }
 
 .profile-left p,
 .profile-right p {
   padding: 0.3em;
   font-size: 1.4em;
+  font-weight: 900;
   letter-spacing: 1.2px;
+  color: var(--background-color);
+}
+.profile-right span {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: var(--primary-color);
 }
 .btn-profile-card {
   padding: 0.5em 1em;
@@ -287,13 +316,24 @@ footer {
   text-decoration: none;
   letter-spacing: 1.2px;
   vertical-align: center;
+  box-shadow: var(--box-shadow-light);
+}
+.btn-profile-card:hover {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  transition: var(--transition);
+  box-shadow: var(--glow-effect);
 }
 .profile-right-inside {
   display: flex;
+  width: 70%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
+  background-color: var(--border-color-dark);
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-light);
   padding: 0.3em;
 }
 .profile-right-inside p {
@@ -304,15 +344,6 @@ footer {
 
 /* Red border is for testing purposes */
 
-.update-profile-form {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  border: 1px solid red;
-  padding: 0.3em;
-}
 .update-profile-form a {
   text-decoration: none;
   color: var(--primary-color);
@@ -323,19 +354,21 @@ label {
   padding: 0.3em;
   font-size: 1em;
   letter-spacing: 1.2px;
+  color: var(--background-color);
 }
 #id_profile_pics,
 .btn-profile-update {
   padding: 0.5em 1em;
-  margin: 2em;
+  margin: 0.5em;
   font-size: 1.5em;
   border: 1px solid var(--border-color-light);
   border-radius: var(--border-radius);
-  background-color: var(--background-color-dark);
+  background-color: var(--border-color-dark);
   color: var(--secondary-color);
   text-decoration: none;
   letter-spacing: 1.2px;
   vertical-align: center;
+  box-shadow: var(--box-shadow-light);
 }
 #text {
   font-size: 2em;
