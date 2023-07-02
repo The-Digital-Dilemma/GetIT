@@ -304,12 +304,16 @@ footer {
   flex-direction: column;
   justify-content: flex-start;
 }
+.coming-soon-container {
+  flex: 3;
+}
 .coming-soon {
-  flex: 1;
+  display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   text-align: center;
+  width: fit-content;
   font-size: 3em;
   font-weight: 900;
   font-style: italic;
@@ -591,10 +595,12 @@ form .btn-register {
 
 /* Red border is for testing purposes */
 .course-details-container {
+  flex: 1;
   display: flex;
   justify-content: space-between;
 }
 .sidebar {
+  flex: 1;
   padding: 1em;
   border-right: 1px solid var(--border-color);
 }
@@ -608,6 +614,6 @@ form .btn-register {
   transition: var(--transition);
 }
 .lesson-content {
-  flex: 3;
+  flex: 2;
   padding: 1em;
 }

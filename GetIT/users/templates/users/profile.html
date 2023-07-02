@@ -47,6 +47,10 @@
     </div>
   </div>
 </div>
-{% else %} {% block content2 %}
-<p>Please login in order to view profile</p>
-{% endblock %} {% endif %} {% endblock %}
+{% else %}
+<!-- Redirect to the login page for unauthenticated users -->
+{% url 'users:login' as login_url %}
+<script>
+  window.location.href = "{{ login_url }}";
+</script>
+{% endif %} {% endblock %}

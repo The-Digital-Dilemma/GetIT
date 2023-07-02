@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block content %} {% if course.chapter_set.all %}
 <div class="course-details-container">
   <div class="sidebar">
-    <h2>{{ course.title }}</h2>
+    <h1>{{ course.title }}</h1>
     {% for chapter in course.chapter_set.all %}
     <h3>{{ chapter.chapter_number }}: {{ chapter.title }}</h3>
     {% for lesson in chapter.lesson_set.all %}
@@ -13,16 +13,23 @@
     {% endfor %} {% endfor %}
   </div>
   {% else %}
-  <h2>{{ course.title }}</h2>
-  <div class="coming-soon">
-    <p>content coming soon</p>
+  <div class="coming-soon-container">
+    <h2>{{ course.title }}</h2>
+    <div class="coming-soon">
+      <p>content coming soon</p>
+    </div>
   </div>
   {% endif %}
   <div class="lesson-content">
     {% if lesson %}
     <h2>Lesson {{ lesson.lesson_number }}: {{ lesson.title }}</h2>
     <p>{{ lesson.content }}</p>
-    {% endif %}
+    {% else %} {% with first_chapter=course.chapter_set.first %} {% if first_chapter %}
+    {%with first_lesson=first_chapter.lesson_set.first %} {% if first_lesson %}
+    <h2>Lesson {{ first_lesson.lesson_number }}: {{ first_lesson.title }}</h2>
+    <p>{{ first_lesson.content }}</p>
+    {% endif %} {% endwith %}{% endif %} {% endwith %}
   </div>
+  {% endif %}
 </div>
 {% endblock %}

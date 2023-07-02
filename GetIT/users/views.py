@@ -6,13 +6,22 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import reverse_lazy
 from .models import Profile
 from .forms import ProfileForm, CustomUserCreationForm
+from django.contrib.auth.mixins import UserPassesTestMixin
 
 
 # Create your views here.
+# Custom LoginRequiredMixin to redirect unauthenticated users
+class CustomLoginRequiredMixin(UserPassesTestMixin):
+    def test_func(self):
+        return self.request.user.is_authenticated
+
+    def handle_no_permission(self):
+        return redirect('users:login')
 
 # Creation of the ProfileView class
 
-class ProfileView(LoginRequiredMixin, DetailView):
+
+class ProfileView(CustomLoginRequiredMixin, DetailView):
     model = Profile
     template_name = "users/profile.html"
     context_object_name = "profile"
