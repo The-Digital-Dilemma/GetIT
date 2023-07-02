@@ -129,7 +129,6 @@ main {
 }
 
 /*  MAIN SECTION  WELCOME PAGE*/
-
 .welcome-hero img {
   position: relative;
   width: 100%;
@@ -160,6 +159,33 @@ main {
   font-size: 1.7em;
   letter-spacing: 1.2px;
   z-index: 1;
+}
+.welcome-content-solution {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  letter-spacing: 1.2px;
+  padding: 1em;
+  width: 50%;
+}
+.welcome-content-solution h1,
+.welcome-content-who h1 {
+  font-size: 5em;
+  font-weight: 900;
+  font-style: italic;
+  color: var(--primary-color);
+}
+.welcome-content-who {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  letter-spacing: 1.2px;
+  padding: 1em;
+  width: 50%;
+  margin-left: auto;
 }
 
 /*  FOOTER SECTION */
