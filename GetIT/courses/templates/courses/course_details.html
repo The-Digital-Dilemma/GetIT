@@ -1,22 +1,28 @@
 {% extends "base.html" %} {% block content %} {% if course.chapter_set.all %}
-<div class="course-detail-container">
-  <h2>{{ course.title }}</h2>
-  {% comment %}
-  <p>{{ course.description }}</p>
-  {% endcomment %} {% for chapter in course.chapter_set.all %}
-  <h3>{{ chapter.chapter_number }}: {{ chapter.title }}</h3>
-  {% for lesson in chapter.lesson_set.all %}
-  <a
-    class="link-lesson-details"
-    href="{% url 'lesson_details' course.pk chapter.pk lesson.pk %}"
-    >{{ lesson.lesson_number }}. {{ lesson.title }}</a
-  ><br />
-
-  {% endfor %} {% endfor %} {% comment %} Otherwise it shows a message that the content is
-  coming soon {% endcomment %} {% else %}
+<div class="course-details-container">
+  <div class="sidebar">
+    <h2>{{ course.title }}</h2>
+    {% for chapter in course.chapter_set.all %}
+    <h3>{{ chapter.chapter_number }}: {{ chapter.title }}</h3>
+    {% for lesson in chapter.lesson_set.all %}
+    <a
+      class="sidebar-lesson-links"
+      href="{% url 'course_details' course.pk %}?lesson={{lesson.pk}}"
+      >{{ lesson.lesson_number }}. {{ lesson.title }}</a
+    ><br />
+    {% endfor %} {% endfor %}
+  </div>
+  {% else %}
   <h2>{{ course.title }}</h2>
   <div class="coming-soon">
     <p>content coming soon</p>
   </div>
+  {% endif %}
+  <div class="lesson-content">
+    {% if lesson %}
+    <h2>Lesson {{ lesson.lesson_number }}: {{ lesson.title }}</h2>
+    <p>{{ lesson.content }}</p>
+    {% endif %}
+  </div>
 </div>
-{% endif %} {% endblock %}
+{% endblock %}
