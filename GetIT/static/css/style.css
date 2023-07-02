@@ -126,6 +126,8 @@ section {
 main {
   flex: 1;
   padding: 1em;
+  display: flex;
+  justify-content: center;
 }
 
 /*  MAIN SECTION  WELCOME PAGE*/
@@ -213,7 +215,7 @@ footer {
   display: flex;
   flex-direction: column;
   border: 1px solid var(--border-color-light);
-  background-color: var(--border-color);
+  background-color: var(--background-color);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   justify-content: space-between;
@@ -228,9 +230,9 @@ footer {
   height: 6em;
   padding: 0.5em;
   width: 100%;
-  background-color: var(--secondary-color);
-  color: var(--background-color-dark);
-  border: 3px solid var(--background-color-dark);
+  background-color: var(--background-color-light);
+  color: var(--primary-color);
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-light);
 }
@@ -238,17 +240,17 @@ footer {
 .courses-card h3 {
   text-align: center;
   height: 4em;
-  color: var(--background-color);
+  color: var(--border-color-light);
 }
 .courses-card-logo {
   justify-content: center;
   width: 160px;
   height: 160px;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   border-radius: 50%;
   border: 3px solid var(--primary-color);
   background-color: var(--background-color);
-  box-shadow: var(--box-shadow-light);
+  box-shadow: var(--glow-effect);
 }
 .courses-card-logo img {
   width: 100%;
@@ -263,16 +265,17 @@ footer {
   justify-content: flex-start;
   align-items: center;
   padding: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   color: var(--secondary-color);
   background-color: var(--border-color-dark);
-  border: 2px solid var(--border-color-light);
+  border: 1px solid var(--border-color-light);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-light);
 }
 .btn-courses-card {
   justify-content: center;
   padding: 0.5em 1em;
+  margin-bottom: 2em;
   border: 1px solid var(--border-color-light);
   border-radius: var(--border-radius);
   background-color: var(--background-color-dark);
@@ -292,6 +295,13 @@ footer {
 /*  COURSES-LIST SECTION */
 
 /* Red border is for testing purposes */
+
+.course-detail-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 .coming-soon {
   flex: 1;
   justify-content: center;
@@ -327,7 +337,7 @@ footer {
   margin: 1em;
   padding: 2em;
   border: 1px solid var(--border-color-light);
-  background-color: var(--border-color);
+  background-color: var(--background-color-dark);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
 }
@@ -338,7 +348,7 @@ footer {
   justify-content: center;
   vertical-align: center;
   padding: 0.5em;
-  width: 30%;
+  width: fit-content;
   background-color: var(--secondary-color);
   color: var(--background-color-dark);
   border: 3px solid var(--background-color-dark);
@@ -451,10 +461,89 @@ label {
 
 /*  LOGIN & REGISTER PAGE SECTION */
 
+/*  LOGIN */
 /* Red border is for testing purposes */
+.login-container,
+.register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  margin: 0.1em;
+  width: fit-content;
+  background-color: var(--background-color-dark);
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1em;
+  /* border: 1px solid red; */
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-container p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.register-container p {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
 
-.btn-login,
-.btn-register {
+.register-container ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+}
+.register-container ul li {
+  padding: 0;
+}
+.helptext {
+  font-size: 0.8em;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+  color: red;
+}
+.login-container label,
+.register-container label {
+  color: var(--primary-color);
+  text-align: center;
+}
+.login-container input,
+.register-container input {
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  font-size: 1em;
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--border-radius);
+  background-color: var(--border-color-dark);
+  color: var(--secondary-color);
+  text-decoration: none;
+  letter-spacing: 1.2px;
+  vertical-align: center;
+  box-shadow: var(--box-shadow-light);
+}
+form .btn-login,
+form .btn-register {
+  align-self: center;
+  justify-self: center;
   padding: 0.5em 1em;
   border: 1px solid var(--border-color-light);
   border-radius: var(--border-radius);
@@ -471,7 +560,13 @@ label {
   box-shadow: var(--glow-effect);
 }
 .link-register,
-.link-login-again,
+.link-login-again {
+  background-color: var(--background-color-dark);
+  color: var(--primary-color);
+  text-decoration: underline;
+  font-style: italic;
+  letter-spacing: 1.2px;
+}
 .link-lesson-details,
 .link-back-to-course-details {
   background-color: var(--background-color-dark);
