@@ -142,30 +142,46 @@ footer {
   flex-direction: row;
   justify-content: space-evenly;
 }
-.courses-card-details {
+.courses-card {
+  flex: 1;
   display: flex;
   flex-direction: column;
   border: 1px solid red;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 1em;
   margin: 1em;
 }
+.courses-card h1 {
+  text-align: center;
+  height: 2.5em;
+  width: 100%;
+  border: 1px solid red;
+}
+.courses-card h3 {
+  text-align: center;
+  height: 4em;
+  border: 1px solid red;
+}
 .courses-card-logo {
+  justify-content: center;
   width: 160px;
   height: 160px;
+  margin-bottom: 1em;
   border: 1px solid red;
 }
 .course-card-description {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 1em;
-  margin: 1em;
+  margin-bottom: 1em;
   border: 1px solid red;
 }
 .btn-courses-card {
+  justify-content: center;
   padding: 0.5em 1em;
   border: 1px solid var(--border-color-light);
   border-radius: var(--border-radius);
@@ -174,6 +190,12 @@ footer {
   text-decoration: none;
   letter-spacing: 1.2px;
   vertical-align: center;
+}
+.btn-courses-card:hover {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  transition: var(--transition);
+  box-shadow: var(--glow-effect);
 }
 
 /*  PROFILE PAGE SECTION */
