@@ -341,20 +341,6 @@ footer {
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
 }
-.profile-right h1,
-.profile-left h1,
-.update-profile-form h1 {
-  text-align: center;
-  justify-content: center;
-  vertical-align: center;
-  padding: 0.5em;
-  width: fit-content;
-  background-color: var(--secondary-color);
-  color: var(--background-color-dark);
-  border: 3px solid var(--background-color-dark);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow-light);
-}
 
 .profile-left img {
   width: 200px;
@@ -366,7 +352,13 @@ footer {
   box-shadow: var(--box-shadow-light);
 }
 
-.profile-left p,
+.profile-left p {
+  padding: 0.3em;
+  font-size: 1.4em;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  color: var(--primary-color);
+}
 .profile-right p {
   padding: 0.3em;
   font-size: 1.4em;
@@ -398,7 +390,7 @@ footer {
 }
 .profile-right-inside {
   display: flex;
-  width: 70%;
+  width: fit-content;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -420,7 +412,7 @@ label {
   padding: 0.3em;
   font-size: 1em;
   letter-spacing: 1.2px;
-  color: var(--background-color);
+  color: var(--border-color-light);
 }
 #id_profile_pics {
   padding: 0.5em 1em;
@@ -461,7 +453,6 @@ label {
 
 /*  LOGIN & REGISTER PAGE SECTION */
 
-/*  LOGIN */
 /* Red border is for testing purposes */
 .login-container,
 .register-container {
@@ -573,4 +564,23 @@ form .btn-register {
   color: var(--primary-color);
   text-decoration: none;
   letter-spacing: 1.2px;
+}
+
+.logout-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  margin-bottom: 2em;
+  width: fit-content;
+  background-color: var(--background-color-dark);
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--border-radius);
+  padding: 1em;
+}
+.logout-container a {
+  font-size: 1.2em;
+  margin: 2em 0;
 }
