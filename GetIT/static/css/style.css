@@ -38,6 +38,7 @@ header {
   top: 0;
   background-color: var(--background-color-dark);
   border-bottom: 0.1em solid var(--primary-color);
+  z-index: 5;
 }
 
 /*  HEADER - NAVIGATION SECTION */
