@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Course, Lesson
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -9,6 +10,7 @@ def courses_list(request):
     return render(request, 'courses/courses_list.html', {'courses': courses})
 
 
+@login_required(login_url='/users/login/')
 def course_details(request, pk):
     course = get_object_or_404(Course, pk=pk)
     context = {'course': course}
