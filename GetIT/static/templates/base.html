@@ -28,8 +28,42 @@
 
     <main>{% block content %} {% endblock %}</main>
     <footer>
-      <p>This setion is the footer, need links as nav, contact and privacy policy</p>
-      <p>&copy; 2020 GeT-IT</p>
+      <ul class="footer-navigation-list">
+        <li>
+          <a 
+          class="footer-link"
+          href="/"
+          >Home</a>
+        </li>
+        <li>
+          <a 
+          class="footer-link"
+          href="/courses"
+          >Courses</a>
+        </li>
+        <li>
+          <a 
+          class="footer-link"
+          href="/users/profile"
+          >Profile</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li>
+          <a 
+          class="footer-link"
+          href="{% url 'users:logout' %}"
+          >Logout</a>
+        </li>
+        {% else %}
+        <li>
+          <a 
+          class="footer-link"
+          href="{% url 'users:login' %}"
+          >Login/Register</a>
+        </li>
+        {% endif %}
+      </ul>
+      <p class="copyright">&copy; 2020 GeT-IT</p>
     </footer>
   </body>
 </html>
