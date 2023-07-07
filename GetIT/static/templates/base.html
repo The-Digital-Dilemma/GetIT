@@ -28,7 +28,7 @@
 
     <main>{% block content %} {% endblock %}</main>
     <footer>
-      <ul class="footer-navigation-list">
+      <ul class="footer-navigation-list footer-list">
         <li>
           <a 
           class="footer-link"
@@ -63,7 +63,28 @@
         </li>
         {% endif %}
       </ul>
-      <p class="copyright">&copy; 2020 GeT-IT</p>
+      <ul class="footer-contact-list footer-list">
+        <li class="footer-contact-detail">
+          <p>Email: GetIT@gmail.com</p>
+        </li>
+        <li class="footer-contact-detail">
+          <p>Address: 167 Madras Street, Christchurch, New Zealand</p>
+        </li>
+        <li class="footer-contact-detail">
+          <p>Phone: 03 963 0033</p>
+        </li>
+      </ul>
+      <ul class="footer-legal-section footer-list">
+        <li class="foote-legal-detail">
+          <a
+          class="footer-link"
+          href=""
+          >Privacy Policy</a>
+        </li>
+        <li class="footer-legal-detail">
+          <p class="copyright">&copy; 2020 GeT-IT</p>
+        </li>
+      </ul>
     </footer>
   </body>
 </html>

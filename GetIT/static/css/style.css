@@ -200,9 +200,16 @@ footer {
   background-color: var(--background-color-dark);
   border-top: 0.1em solid var(--primary-color);
   display: flex;
+  justify-content: space-around;
 }
 
 /*  FOOTER - NAVIGATION SECTION */
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .footer-link {
   text-decoration: none;
@@ -212,6 +219,10 @@ footer {
 
 .footer-link:hover {
   opacity: 100%;
+}
+
+.footer-contact-list li {
+  padding: 0;
 }
 
 /*  COURSES-LIST SECTION */
