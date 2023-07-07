@@ -51,10 +51,12 @@ header {
 .navigation-menu {
   flex: 1;
   display: flex;
+  margin-left: 3em;
 }
 .navigation-list {
   list-style-type: none;
   padding: 1em;
+
   margin: 0;
   flex: 1;
   display: flex;
@@ -93,14 +95,11 @@ li.active a {
   text-decoration: none;
   letter-spacing: 1.2px;
   vertical-align: center;
-  padding: 0em 1em;
 }
 .link-home {
-  font-size: 3.5em;
+  font-size: 8vw;
   font-weight: 900;
   color: var(--border-color);
-  padding: 0;
-  margin: 0.5em;
 }
 .link-home span {
   color: var(--primary-color);
@@ -125,11 +124,11 @@ li.active a {
 section {
   justify-content: space-between;
   padding: 0 1.5em;
+  font-size: 3vmax 1vmin;
   border-bottom: var(--border-color) 1px solid;
 }
 
 .section-right span {
-  font-size: 1em;
   color: var(--primary-color);
 }
 
@@ -174,7 +173,7 @@ main {
 
 .welcome-hero h1 {
   font-weight: 900;
-  font-size: 6vw;
+  font-size: 7vw;
   color: var(--border-color);
   letter-spacing: 1.2px;
   text-shadow: 0 0 5px var(--border-color-dark);
@@ -661,13 +660,15 @@ form .btn-register {
     display: flex;
     justify-content: center;
     align-self: center;
+    padding: 0;
+    margin: 0.2em;
   }
   .hamburger-button {
     display: block;
     position: absolute;
-    top: 1.5em;
+    top: 0.5rem;
+    left: 0.5rem;
     padding: 0.5em;
-    margin: 2em;
     background-color: var(--background-color-dark);
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
@@ -679,6 +680,7 @@ form .btn-register {
   .navigation-menu.active {
     display: flex; /* Show the menu when the button is clicked */
     flex-direction: column;
+    margin: 0;
   }
   .navigation-list {
     display: flex;
@@ -692,7 +694,13 @@ form .btn-register {
   .link-login,
   .link-logout,
   .link-home {
+    border: none;
     width: 100%; /* Take up full width on small devices */
+  }
+  .link:hover,
+  .link-login:hover,
+  .link-logout:hover {
+    border: none;
   }
   li.active::after {
     bottom: -0.2em;
@@ -718,7 +726,9 @@ form .btn-register {
     font-size: 0.8em;
   }
   .courses-card {
-    margin: 0;
-    margin-bottom: 2rem;
+    margin: 1em 0;
+  }
+  main {
+    padding: 0.5em;
   }
 }
