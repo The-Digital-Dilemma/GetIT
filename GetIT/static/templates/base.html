@@ -12,6 +12,18 @@
       rel="stylesheet"
       href="{% static 'css/style.css' %}"
     />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // JavaScript code to toggle the active state of the hamburger button
+        const hamburgerButton = document.querySelector(".hamburger-button");
+        const navigationMenu = document.querySelector(".navigation-menu");
+
+        hamburgerButton.addEventListener("click", () => {
+          hamburgerButton.classList.toggle("active");
+          navigationMenu.classList.toggle("active");
+        });
+      });
+    </script>
   </head>
   <body>
     <header>{% include 'navigation.html' %}</header>

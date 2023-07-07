@@ -19,7 +19,6 @@
 }
 /*  BODY  SECTION */
 
-html,
 body {
   display: flex;
   flex-direction: column;
@@ -42,11 +41,22 @@ header {
 }
 
 /*  HEADER - NAVIGATION SECTION */
-
+.navigation-container {
+  display: flex;
+  align-items: center;
+}
+.hamburger-button {
+  display: none; /* Hide the menu by default */
+}
+.navigation-menu {
+  flex: 1;
+  display: flex;
+}
 .navigation-list {
   list-style-type: none;
   padding: 1em;
   margin: 0;
+  flex: 1;
   display: flex;
   justify-content: space-between;
   align-self: center;
@@ -63,7 +73,7 @@ li.active::after {
   content: "";
   display: block;
   position: absolute;
-  bottom: 0.5em;
+  bottom: -0.5em;
   left: 50%;
   transform: translateX(-50%);
   width: 100px;
@@ -90,6 +100,7 @@ li.active a {
   font-weight: 900;
   color: var(--border-color);
   padding: 0;
+  margin: 0.5em;
 }
 .link-home span {
   color: var(--primary-color);
@@ -112,7 +123,6 @@ li.active a {
 
 /*  Section SECTION */
 section {
-  display: flex;
   justify-content: space-between;
   padding: 0 1.5em;
   border-bottom: var(--border-color) 1px solid;
@@ -133,19 +143,23 @@ main {
 }
 
 /*  MAIN SECTION  WELCOME PAGE*/
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
 .welcome-hero img {
-  position: relative;
   width: 100%;
-  height: 100%;
   object-fit: cover;
   object-position: center;
 }
 .welcome-hero h1 {
-  position: absolute;
-  width: fit-content;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 900;
   font-size: 5em;
   color: var(--border-color);
@@ -154,11 +168,9 @@ main {
   z-index: 1;
 }
 .welcome-hero p {
-  position: absolute;
-  width: fit-content;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -40%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 400;
   font-size: 1.7em;
   letter-spacing: 1.2px;
@@ -414,7 +426,12 @@ footer {
 /*  PROFILE PAGE SECTION */
 
 /* Red border is for testing purposes */
-
+.update-profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
 label {
   padding: 0.3em;
   font-size: 1em;
@@ -617,4 +634,71 @@ form .btn-register {
 .lesson-content {
   flex: 2;
   padding: 1em;
+}
+
+/* Hamburger menu layout for small devices */
+@media (max-width: 768px) {
+  .navigation-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navigation-menu {
+    display: none; /* Hide the menu by default */
+  }
+  .link-home {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+  .hamburger-button {
+    display: block;
+    position: absolute;
+    top: 1.5em;
+    padding: 0.5em;
+    margin: 2em;
+    background-color: var(--border-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+  }
+  .hamburger-button.active {
+    content: "x";
+  }
+  .navigation-menu.active {
+    display: flex; /* Show the menu when the button is clicked */
+    flex-direction: column;
+  }
+  .navigation-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 0;
+  }
+  .link,
+  .link-login,
+  .link-logout,
+  .link-home {
+    width: 100%; /* Take up full width on small devices */
+  }
+  li.active::after {
+    bottom: -0.2em;
+  }
+  .courses-card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 420px) {
+  .profile-container {
+    flex-direction: column;
+  }
+  .profile-left,
+  .profile-right {
+    margin: 0.5em;
+  }
+  #id_profile_pics {
+    font-size: 0.8em;
+  }
 }
