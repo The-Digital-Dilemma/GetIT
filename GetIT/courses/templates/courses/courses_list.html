@@ -7,6 +7,12 @@
     </div>
     <div class="courses-card-title">
       <h3>{{ course.title }}</h3>
+      {% if user.is_authenticated %}
+        {% if user_is_admin_or_instructor %}
+          <a href="{% url 'course_edit' course_pk=course.pk %}">
+            <span class="material-symbols-outlined">edit</a></span>
+        {% endif %}
+      {% endif %}
     </div>
     <div class="courses-card-logo">
       <img
