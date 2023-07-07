@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+{% comment %} <h2>Course Details</h2> {% endcomment %}
+<p>Please enter the details of the course.</p>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save" />
+</form>
+{% endblock %}

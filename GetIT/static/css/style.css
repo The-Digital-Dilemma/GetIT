@@ -238,7 +238,10 @@ footer {
   border-radius: var(--border-radius);
   box-shadow: var(--glow-effect-light);
 }
-
+.courses-card-title {
+  display: flex;
+  align-items: center;
+}
 .courses-card h3 {
   text-align: center;
   height: 4em;
@@ -605,6 +608,14 @@ form .btn-register {
   padding: 1em;
   border-right: 1px solid var(--border-color);
 }
+.sidebar-chapter-title {
+  display: flex;
+  align-items: center;
+}
+.sidebar-lesson-title {
+  display: flex;
+  align-items: center;
+}
 .sidebar-lesson-links {
   color: var(--secondary-color);
   text-decoration: none;
@@ -617,4 +628,10 @@ form .btn-register {
 .lesson-content {
   flex: 2;
   padding: 1em;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 40;
+  color: var(--primary-color);
+  font-size: 2rem;
 }

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<p>Please enter the details of the chapter.</p>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+{% endblock %}
