@@ -623,10 +623,18 @@ form .btn-register {
 /* COURSE DETAILS AND LESSON CONTENT SECTION */
 
 /* Red border is for testing purposes */
+.toggle-sidebar {
+  display: none;
+}
 .course-details-container {
   flex: 1;
+  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+}
+.couses-details-box {
+  flex-direction: row;
 }
 .sidebar {
   flex: 1;
@@ -674,9 +682,6 @@ form .btn-register {
     border: 1px solid var(--primary-color);
     border-radius: 8px;
   }
-  .hamburger-button.active {
-    content: "x";
-  }
   .navigation-menu.active {
     display: flex; /* Show the menu when the button is clicked */
     flex-direction: column;
@@ -712,6 +717,25 @@ form .btn-register {
   .welcome-content-solution,
   .welcome-content-who {
     justify-content: center;
+  }
+  /* COURSE DETAILS AND LESSON CONTENT SECTION  FOR RESPONSIVE*/
+
+  .toggle-sidebar {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .sidebar {
+    display: none;
+    flex: 1;
+    padding: 1em;
+    border-right: 1px solid var(--border-color);
+  }
+  .show-sidebar .sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+  .lesson-content {
+    flex: 1;
   }
 }
 @media (max-width: 420px) {
