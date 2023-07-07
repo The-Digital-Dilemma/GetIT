@@ -3,13 +3,28 @@
   <div class="sidebar">
     <h1>{{ course.title }}</h1>
     {% for chapter in course.chapter_set.all %}
-    <h3>{{ chapter.chapter_number }}: {{ chapter.title }}</h3>
-    {% for lesson in chapter.lesson_set.all %}
-    <a
-      class="sidebar-lesson-links"
-      href="{% url 'course_details' course.pk %}?lesson={{lesson.pk}}"
-      >{{ lesson.lesson_number }}. {{ lesson.title }}</a
-    ><br />
+    <div class="sidebar-chapter-title">
+      <h3>{{ chapter.chapter_number }}: {{ chapter.title }}</h3>
+      {% if user.is_authenticated %}
+        {% if user_is_admin_or_instructor %}
+          <a href="{% url 'chapter_edit' course.pk chapter.pk %}">
+            <span class="material-symbols-outlined">edit</span></a>
+        {% endif %}
+      {% endif %}
+    </div>
+      {% for lesson in chapter.lesson_set.all %}
+      <div class="sidebar-lesson-title">
+      <a
+        class="sidebar-lesson-links"
+        href="{% url 'course_details' course.pk %}?lesson={{lesson.pk}}"
+        >{{ lesson.lesson_number }}. {{ lesson.title }}</a><br />
+      {% if user.is_authenticated %}
+        {% if user_is_admin_or_instructor %}
+        <a href="{% url 'lesson_edit' course.pk lesson.pk %}">
+            <span class="material-symbols-outlined">edit</span></a><br />
+        {% endif %}
+      {% endif %}
+    </div>
     {% endfor %} {% endfor %}
   </div>
   {% else %}
@@ -22,11 +37,13 @@
   {% endif %}
   <div class="lesson-content">
     {% if lesson %}
-    <h2>Lesson {{ lesson.lesson_number }}: {{ lesson.title }}</h2>
+    <div class="lesson-content-title">
+      <h2>Lesson {{ lesson.lesson_number }}: {{ lesson.title }}</h2>
+    </div>
     <p>{{ lesson.content }}</p>
     {% else %} {% with first_chapter=course.chapter_set.first %} {% if first_chapter %}
     {%with first_lesson=first_chapter.lesson_set.first %} {% if first_lesson %}
-    <h2>Lesson {{ first_lesson.lesson_number }}: {{ first_lesson.title }}</h2>
+      <h2>Lesson {{ first_lesson.lesson_number }}: {{ first_lesson.title }}</h2>
     <p>{{ first_lesson.content }}</p>
     {% endif %} {% endwith %}{% endif %} {% endwith %}
   </div>
