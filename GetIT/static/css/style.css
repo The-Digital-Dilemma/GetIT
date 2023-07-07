@@ -146,33 +146,44 @@ main {
 .welcome-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 1em;
+  justify-content: center;
+}
+
+.welcome-hero {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 2px solid red;
 }
 
 .welcome-hero img {
   width: 100%;
-  object-fit: cover;
-  object-position: center;
+  height: auto;
+  max-width: 100%;
 }
+.welcome-message {
+  position: absolute;
+  width: fit-content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
 .welcome-hero h1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-weight: 900;
-  font-size: 5em;
+  font-size: 6vw;
   color: var(--border-color);
   letter-spacing: 1.2px;
   text-shadow: 0 0 5px var(--border-color-dark);
   z-index: 1;
 }
 .welcome-hero p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-weight: 400;
-  font-size: 1.7em;
+  font-size: 2vw;
   letter-spacing: 1.2px;
   z-index: 1;
 }
@@ -188,7 +199,7 @@ main {
 }
 .welcome-content-solution h1,
 .welcome-content-who h1 {
-  font-size: 5em;
+  font-size: 6vw;
   font-weight: 900;
   font-style: italic;
   color: var(--primary-color);
@@ -688,6 +699,10 @@ form .btn-register {
   .courses-card-container {
     flex-direction: column;
     align-items: center;
+  }
+  .welcome-content-solution,
+  .welcome-content-who {
+    justify-content: center;
   }
 }
 @media (max-width: 420px) {
