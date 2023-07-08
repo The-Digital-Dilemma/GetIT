@@ -624,6 +624,10 @@ form .btn-register {
 /* COURSE DETAILS AND LESSON CONTENT SECTION */
 
 /* Red border is for testing purposes */
+.big-box h1 {
+  font-size: 2rem;
+  margin: 0.5em 0;
+}
 .toggle-sidebar {
   display: none;
 }
