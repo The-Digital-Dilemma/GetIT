@@ -28,6 +28,10 @@ body {
   color: var(--secondary-color);
   background-color: var(--background-color);
 }
+.btn-cancel {
+  color: var(--primary-color);
+  margin: 0 1em;
+}
 
 /*  HEADER SECTION */
 
@@ -252,9 +256,9 @@ footer {
   justify-content: center;
   vertical-align: center;
   height: 6em;
-  padding: 0 3rem;
+  padding: 0.5rem 3rem;
   max-width: fit-content;
-  font-size: 1rem;
+  font-size: 0.8rem;
   background-color: var(--background-color-light);
   color: var(--primary-color);
   border: 1px solid var(--border-color);
