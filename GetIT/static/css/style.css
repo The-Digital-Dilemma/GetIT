@@ -364,13 +364,13 @@ footer {
 .profile-left,
 .profile-right,
 .update-profile-form {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 1em;
   padding: 2em;
+  width: 250px;
   border: 1px solid var(--border-color-light);
   background-color: var(--background-color-dark);
   border-radius: var(--border-radius);
@@ -425,7 +425,7 @@ footer {
 }
 .profile-right-inside {
   display: flex;
-  width: fit-content;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
