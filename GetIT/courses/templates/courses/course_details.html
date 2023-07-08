@@ -1,52 +1,56 @@
 {% extends "base.html" %} {% block content %} {% if course.chapter_set.all %}
-<div class="course-details-container">
-  <div class="sidebar">
-    <h1>{{ course.title }}</h1>
-    {% for chapter in course.chapter_set.all %}
-    <div class="sidebar-chapter-title">
-      <h3>{{ chapter.chapter_number }}: {{ chapter.title }}</h3>
-      {% if user.is_authenticated %}
-        {% if user_is_admin_or_instructor %}
-          <a href="{% url 'chapter_edit' course.pk chapter.pk %}">
-            <span class="material-symbols-outlined">edit</span></a>
-        {% endif %}
-      {% endif %}
+<div class="big-box">
+  <h1>{{ course.title }}</h1>
+  <div class="course-details-container">
+    <div class="toggle-sidebar">
+      <button class="sidebar-toggle-button">&#9776;Lessons</button>
     </div>
+    <div class="sidebar">
+      {% for chapter in course.chapter_set.all %}
+      <div class="sidebar-chapter-title">
+        <h3>{{ chapter.chapter_number }}: {{ chapter.title }}</h3>
+        {% if user.is_authenticated %} {% if user_is_admin_or_instructor %}
+        <a href="{% url 'chapter_edit' course.pk chapter.pk %}">
+          <span class="material-symbols-outlined">edit</span></a
+        >
+        {% endif %} {% endif %}
+      </div>
       {% for lesson in chapter.lesson_set.all %}
       <div class="sidebar-lesson-title">
-      <a
-        class="sidebar-lesson-links"
-        href="{% url 'course_details' course.pk %}?lesson={{lesson.pk}}"
-        >{{ lesson.lesson_number }}. {{ lesson.title }}</a><br />
-      {% if user.is_authenticated %}
-        {% if user_is_admin_or_instructor %}
+        <a
+          class="sidebar-lesson-links"
+          href="{% url 'course_details' course.pk %}?lesson={{lesson.pk}}"
+          >{{ lesson.lesson_number }}. {{ lesson.title }}</a
+        ><br />
+        {% if user.is_authenticated %} {% if user_is_admin_or_instructor %}
         <a href="{% url 'lesson_edit' course.pk lesson.pk %}">
-            <span class="material-symbols-outlined">edit</span></a><br />
-        {% endif %}
-      {% endif %}
+          <span class="material-symbols-outlined">edit</span></a
+        ><br />
+        {% endif %} {% endif %}
+      </div>
+      {% endfor %} {% endfor %}
     </div>
-    {% endfor %} {% endfor %}
-  </div>
-  {% else %}
-  <div class="coming-soon-container">
-    <h2>{{ course.title }}</h2>
-    <div class="coming-soon">
-      <p>content coming soon</p>
+    {% else %}
+    <div class="coming-soon-container">
+      <h2>{{ course.title }}</h2>
+      <div class="coming-soon">
+        <p>content coming soon</p>
+      </div>
     </div>
-  </div>
-  {% endif %}
-  <div class="lesson-content">
-    {% if lesson %}
-    <div class="lesson-content-title">
-      <h2>Lesson {{ lesson.lesson_number }}: {{ lesson.title }}</h2>
-    </div>
-    <p>{{ lesson.content }}</p>
-    {% else %} {% with first_chapter=course.chapter_set.first %} {% if first_chapter %}
-    {%with first_lesson=first_chapter.lesson_set.first %} {% if first_lesson %}
+    {% endif %}
+    <div class="lesson-content">
+      {% if lesson %}
+      <div class="lesson-content-title">
+        <h2>Lesson {{ lesson.lesson_number }}: {{ lesson.title }}</h2>
+      </div>
+      <p>{{ lesson.content }}</p>
+      {% else %} {% with first_chapter=course.chapter_set.first %} {% if first_chapter %}
+      {%with first_lesson=first_chapter.lesson_set.first %} {% if first_lesson %}
       <h2>Lesson {{ first_lesson.lesson_number }}: {{ first_lesson.title }}</h2>
-    <p>{{ first_lesson.content }}</p>
-    {% endif %} {% endwith %}{% endif %} {% endwith %}
+      <p>{{ first_lesson.content }}</p>
+      {% endif %} {% endwith %}{% endif %} {% endwith %}
+    </div>
+    {% endif %}
   </div>
-  {% endif %}
 </div>
 {% endblock %}

@@ -1,9 +1,15 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <p>Please enter the details of the lesson.</p>
 <form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Save">
+  {% csrf_token %} {{ form.as_p }}
+  <input
+    type="submit"
+    value="Save"
+  />
+  <a
+    class="btn-cancel"
+    href="/courses"
+    >Cancel
+  </a>
 </form>
 {% endblock %}

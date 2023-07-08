@@ -18,8 +18,6 @@
   --transition: all 0.3s ease-in-out;
 }
 /*  BODY  SECTION */
-
-html,
 body {
   display: flex;
   flex-direction: column;
@@ -29,6 +27,10 @@ body {
   font-family: "Roboto", sans-serif;
   color: var(--secondary-color);
   background-color: var(--background-color);
+}
+.btn-cancel {
+  color: var(--primary-color);
+  margin: 0 1em;
 }
 
 /*  HEADER SECTION */
@@ -43,10 +45,24 @@ header {
 
 /*  HEADER - NAVIGATION SECTION */
 
+.navigation-container {
+  display: flex;
+  align-items: center;
+}
+.hamburger-button {
+  display: none; /* Hide the menu by default */
+}
+.navigation-menu {
+  flex: 1;
+  display: flex;
+  margin-left: 3em;
+}
 .navigation-list {
   list-style-type: none;
   padding: 1em;
+
   margin: 0;
+  flex: 1;
   display: flex;
   justify-content: space-between;
   align-self: center;
@@ -63,7 +79,7 @@ li.active::after {
   content: "";
   display: block;
   position: absolute;
-  bottom: 0.5em;
+  bottom: -0.5em;
   left: 50%;
   transform: translateX(-50%);
   width: 100px;
@@ -86,10 +102,9 @@ li.active a {
   padding: 0em 1em;
 }
 .link-home {
-  font-size: 3.5em;
+  font-size: 6vw;
   font-weight: 900;
   color: var(--border-color);
-  padding: 0;
 }
 .link-home span {
   color: var(--primary-color);
@@ -112,14 +127,13 @@ li.active a {
 
 /*  Section SECTION */
 section {
-  display: flex;
   justify-content: space-between;
   padding: 0 1.5em;
+  font-size: 3vmax 1vmin;
   border-bottom: var(--border-color) 1px solid;
 }
 
 .section-right span {
-  font-size: 1em;
   color: var(--primary-color);
 }
 
@@ -133,34 +147,46 @@ main {
 }
 
 /*  MAIN SECTION  WELCOME PAGE*/
-.welcome-hero img {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.welcome-hero h1 {
+
+.welcome-hero {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.welcome-hero img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+.welcome-message {
   position: absolute;
   width: fit-content;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.welcome-hero h1 {
   font-weight: 900;
-  font-size: 5em;
+  font-size: 7vw;
   color: var(--border-color);
   letter-spacing: 1.2px;
   text-shadow: 0 0 5px var(--border-color-dark);
   z-index: 1;
 }
 .welcome-hero p {
-  position: absolute;
-  width: fit-content;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -40%);
   font-weight: 400;
-  font-size: 1.7em;
+  font-size: 2vw;
   letter-spacing: 1.2px;
   z-index: 1;
 }
@@ -176,7 +202,7 @@ main {
 }
 .welcome-content-solution h1,
 .welcome-content-who h1 {
-  font-size: 5em;
+  font-size: 6vw;
   font-weight: 900;
   font-style: italic;
   color: var(--primary-color);
@@ -230,19 +256,18 @@ footer {
   justify-content: center;
   vertical-align: center;
   height: 6em;
-  padding: 0.5em;
-  width: 100%;
+  padding: 0.5rem 3rem;
+  max-width: fit-content;
+  font-size: 0.8rem;
   background-color: var(--background-color-light);
   color: var(--primary-color);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   box-shadow: var(--glow-effect-light);
 }
-.courses-card-title {
-  display: flex;
-  align-items: center;
-}
+
 .courses-card h3 {
+  margin: 2.2rem 0;
   text-align: center;
   height: 4em;
   color: var(--border-color-light);
@@ -339,13 +364,13 @@ footer {
 .profile-left,
 .profile-right,
 .update-profile-form {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 1em;
   padding: 2em;
+  width: 250px;
   border: 1px solid var(--border-color-light);
   background-color: var(--background-color-dark);
   border-radius: var(--border-radius);
@@ -400,7 +425,7 @@ footer {
 }
 .profile-right-inside {
   display: flex;
-  width: fit-content;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -417,7 +442,12 @@ footer {
 /*  PROFILE PAGE SECTION */
 
 /* Red border is for testing purposes */
-
+.update-profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
 label {
   padding: 0.3em;
   font-size: 1em;
@@ -598,10 +628,22 @@ form .btn-register {
 /* COURSE DETAILS AND LESSON CONTENT SECTION */
 
 /* Red border is for testing purposes */
+.big-box h1 {
+  font-size: 2rem;
+  margin: 0.5em 0;
+}
+.toggle-sidebar {
+  display: none;
+}
 .course-details-container {
   flex: 1;
+  position: relative;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+}
+.couses-details-box {
+  flex-direction: row;
 }
 .sidebar {
   flex: 1;
@@ -634,4 +676,109 @@ form .btn-register {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 40;
   color: var(--primary-color);
   font-size: 2rem;
+}
+/* Hamburger menu layout for small devices */
+@media (max-width: 768px) {
+  .navigation-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navigation-menu {
+    display: none; /* Hide the menu by default */
+  }
+  .link-home {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 0;
+    margin: 0.2em;
+  }
+  .hamburger-button {
+    display: block;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.5em;
+    background-color: var(--background-color-dark);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+  }
+  .navigation-menu.active {
+    display: flex; /* Show the menu when the button is clicked */
+    flex-direction: column;
+    margin: 0;
+  }
+  .navigation-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 0;
+  }
+  .link,
+  .link-login,
+  .link-logout,
+  .link-home {
+    border: none;
+    width: 100%; /* Take up full width on small devices */
+  }
+  .link:hover,
+  .link-login:hover,
+  .link-logout:hover {
+    border: none;
+  }
+  li.active::after {
+    bottom: -0.2em;
+  }
+  .courses-card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .welcome-content-solution,
+  .welcome-content-who {
+    justify-content: center;
+    width: auto;
+  }
+  /* COURSE DETAILS AND LESSON CONTENT SECTION  FOR RESPONSIVE*/
+
+  .toggle-sidebar {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .course-details-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    display: none;
+    flex: 1;
+    padding: 1em;
+    border-right: 1px solid var(--border-color);
+  }
+  .show-sidebar .sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+  .lesson-content {
+    flex: 1;
+  }
+}
+@media (max-width: 420px) {
+  .profile-container {
+    flex-direction: column;
+  }
+  .profile-left,
+  .profile-right {
+    margin: 0.5em;
+  }
+  #id_profile_pics {
+    font-size: 0.8em;
+  }
+  .courses-card {
+    margin: 1em 0;
+  }
+  main {
+    padding: 0.5em;
+  }
 }

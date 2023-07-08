@@ -1,9 +1,17 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <p>Please enter the details of the chapter.</p>
 <form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
+  {% csrf_token %} {{form.as_p}}
+  <button
+    class="btn-courses-card"
+    type="submit"
+  >
+    Save
+  </button>
+  <a
+    class="btn-cancel"
+    href="/courses"
+    >Cancel
+  </a>
 </form>
 {% endblock %}
