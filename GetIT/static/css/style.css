@@ -719,7 +719,7 @@ form .btn-register {
   .hamburger-button {
     display: block;
     position: absolute;
-    top: 0.5rem;
+    top: 0.3rem;
     left: 0.5rem;
     padding: 0.5em;
     background-color: var(--background-color-dark);
@@ -785,6 +785,16 @@ form .btn-register {
   }
   .lesson-content {
     flex: 1;
+  }
+  footer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  footer ul {
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid var(--border-color);
   }
 }
 @media (max-width: 420px) {
