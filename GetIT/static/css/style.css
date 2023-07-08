@@ -739,6 +739,7 @@ form .btn-register {
   .welcome-content-solution,
   .welcome-content-who {
     justify-content: center;
+    width: auto;
   }
   /* COURSE DETAILS AND LESSON CONTENT SECTION  FOR RESPONSIVE*/
 
