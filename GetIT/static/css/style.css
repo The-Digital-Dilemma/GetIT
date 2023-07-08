@@ -225,9 +225,31 @@ footer {
   margin-top: auto;
   background-color: var(--background-color-dark);
   border-top: 0.1em solid var(--primary-color);
+  display: flex;
+  justify-content: space-around;
 }
 
 /*  FOOTER - NAVIGATION SECTION */
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #c1ff72;
+  opacity: 70%;
+}
+
+.footer-link:hover {
+  opacity: 100%;
+}
+
+.footer-contact-list li {
+  padding: 0;
+}
 
 /*  COURSES-LIST SECTION */
 
@@ -781,4 +803,17 @@ form .btn-register {
   main {
     padding: 0.5em;
   }
+}
+/* PRIVACY POLICY SECTION */
+
+.privacy-policy-container {
+  text-align: center;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.privacy-policy-title {
+  font-size: 45px;
 }
